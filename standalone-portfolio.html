@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivek Kumar | Technical Lead - Power Platform, SPFx & AI Solution Architect</title>
+  <meta name="description" content="Portfolio of Vivek Kumar, Technical Lead specializing in Microsoft Power Platform, SPFx (TypeScript), Enterprise Architecture, and GenAI Integrations." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            },
+            accent: {
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500/20 selection:text-cyan-200 transition-colors duration-200">
+
+  <!-- TOP BAR NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Zone 1: Single Brand Wordmark -->
+      <a href="#hero" class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-2 group">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform" title="Available for Roles"></span>
+        <span class="tracking-tight">Vivek Kumar</span>
+      </a>
+
+      <!-- Zone 2: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs lg:text-sm font-medium text-slate-300">
+        <a href="#matrix" class="hover:text-cyan-400 transition-colors">Architectural Triad</a>
+        <a href="#cases" class="hover:text-cyan-400 transition-colors">Case Studies</a>
+        <a href="#timeline" class="hover:text-cyan-400 transition-colors">Career & Leadership</a>
+        <a href="#credentials" class="hover:text-cyan-400 transition-colors">Certifications & Tech</a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Zone 3: Primary Actions -->
+      <div class="flex items-center gap-3">
+        <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 text-slate-400 hover:text-slate-200 hover:bg-slate-900 rounded-lg transition-colors" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon text-sm" id="themeIcon"></i>
+        </button>
+
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-colors whitespace-nowrap">
+          <i class="fa-regular fa-paper-plane text-xs"></i> Connect
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Open Navigation">
+          <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileDrawer" class="hidden md:hidden border-b border-slate-800 bg-slate-950 px-4 pt-2 pb-4 space-y-2">
+      <a href="#matrix" onclick="toggleMobileMenu()" class="block py-2 text-sm text-slate-300 hover:text-cyan-400">Architectural Triad</a>
+      <a href="#cases" onclick="toggleMobileMenu()" class="block py-2 text-sm text-slate-300 hover:text-cyan-400">Case Studies</a>
+      <a href="#timeline" onclick="toggleMobileMenu()" class="block py-2 text-sm text-slate-300 hover:text-cyan-400">Career & Leadership</a>
+      <a href="#credentials" onclick="toggleMobileMenu()" class="block py-2 text-sm text-slate-300 hover:text-cyan-400">Certifications & Tech</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-sm text-slate-300 hover:text-cyan-400">Contact & Recruiter Form</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+    <!-- Ambient glow gradients -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-blue-600/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Relocation Readiness Strip -->
+      <div class="flex flex-wrap items-center gap-2 mb-6 text-xs text-slate-400">
+        <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Ready for Relocation & Global Roles
+        </span>
+        <span aria-hidden="true" class="text-slate-600">·</span>
+        <span class="text-slate-300">Target Markets: Finland, Denmark, Singapore, UAE & Global Hybrid</span>
+        <span aria-hidden="true" class="text-slate-600">·</span>
+        <span class="text-slate-400">Noida, India (IST / UTC+5:30)</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Left Column -->
+        <div class="lg:col-span-8">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] text-balance">
+            Technical Lead | <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">Power Platform, SPFx & AI</span> Solution Architect
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+            Enterprise technical leader with 4+ years spearheading BFSI & IT services delivery. Bridging the gap between rapid low-code automation (Power Apps, Power Automate, Dataverse), pro-code governance (SharePoint Framework SPFx, TypeScript, Python pipelines), and modern GenAI architectures (Copilot Studio, RAG, AI Builder).
+          </p>
+
+          <!-- Metrics Cards (Zero-pill, tabular numbers) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-slate-800/80">
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="text-2xl lg:text-3xl font-bold font-mono text-cyan-400 tracking-tight">4+ Yrs</div>
+              <div class="text-xs text-slate-400 mt-1 font-medium">Enterprise BFSI & IT</div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="text-2xl lg:text-3xl font-bold font-mono text-blue-400 tracking-tight">7+ Devs</div>
+              <div class="text-xs text-slate-400 mt-1 font-medium">Agile Engineering Led</div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="text-2xl lg:text-3xl font-bold font-mono text-emerald-400 tracking-tight">8+ Depts</div>
+              <div class="text-xs text-slate-400 mt-1 font-medium">Automated End-to-End</div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="text-2xl lg:text-3xl font-bold font-mono text-amber-400 tracking-tight">MBA</div>
+              <div class="text-xs text-slate-400 mt-1 font-medium">Data Science (Amity)</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 mt-8">
+            <a href="#cases" class="px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-colors flex items-center gap-2">
+              <i class="fa-solid fa-layer-group text-xs"></i> View Architecture Case Studies
+            </a>
+            <button onclick="openCvModal()" class="px-5 py-2.5 text-sm font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
+              <i class="fa-regular fa-file-pdf text-xs"></i> View / Download CV
+            </button>
+            <a href="https://linkedin.com/in/vivek-kumara" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 border border-slate-800 rounded-lg transition-colors flex items-center gap-2">
+              <i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Vivektrav5" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 border border-slate-800 rounded-lg transition-colors flex items-center gap-2">
+              <i class="fa-brands fa-github text-slate-300"></i> GitHub
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Hero Right Column: Architecture & Profile Card -->
+        <div class="lg:col-span-4">
+          <div class="relative rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 shadow-2xl">
+            
+            <div class="flex items-center gap-4 pb-5 border-b border-slate-800">
+              <div class="w-16 h-16 rounded-xl bg-slate-800 border border-slate-700 overflow-hidden flex-shrink-0 relative group">
+                <img 
+                  id="profileImg"
+                  src="/src/assets/images/vivek_kumar_real_photo_1790766671250.jpg" 
+                  alt="Vivek Kumar - Technical Lead & Solution Architect" 
+                  class="w-full h-full object-cover object-top"
+                  referrerpolicy="no-referrer"
+                  onerror="this.style.display='none'; document.getElementById('avatarFallback').classList.remove('hidden');"
+                />
+                <div id="avatarFallback" class="hidden w-full h-full flex items-center justify-center bg-slate-800 text-cyan-400">
+                  <i class="fa-solid fa-user-tie text-2xl"></i>
+                </div>
+                <label for="customPhotoInput" class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer text-cyan-300" title="Upload custom photo">
+                  <i class="fa-solid fa-camera text-sm"></i>
+                </label>
+                <input type="file" id="customPhotoInput" accept="image/*" class="hidden" onchange="previewUserPhoto(event)" />
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1">
+                  <h3 class="text-base font-bold text-white truncate">Vivek Kumar</h3>
+                  <button id="resetAvatarBtn" onclick="resetAvatar()" class="hidden text-[10px] text-slate-400 hover:text-cyan-400 flex items-center gap-1" title="Reset to official studio headshot">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                  </button>
+                </div>
+                <p class="text-xs text-cyan-400 font-medium">Technical Lead & Architect</p>
+                <div class="flex items-center justify-between text-[11px] text-slate-400 mt-0.5">
+                  <span>DMI Finance · Ex-BirlaSoft</span>
+                  <label for="customPhotoInput" class="text-[10px] text-cyan-400 hover:underline cursor-pointer flex items-center gap-1">
+                    <i class="fa-solid fa-camera text-[10px]"></i> Change
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Focus Areas -->
+            <div class="mt-5 space-y-3">
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">Core Architecture Focus</div>
+              
+              <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                <div class="flex items-center justify-between text-xs text-slate-300 font-medium">
+                  <span class="flex items-center gap-2 text-blue-400"><i class="fa-solid fa-cubes text-xs"></i> Power Platform & Dataverse</span>
+                  <span class="font-mono text-slate-400">95%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                  <div class="bg-blue-500 h-full rounded-full" style="width: 95%"></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                <div class="flex items-center justify-between text-xs text-slate-300 font-medium">
+                  <span class="flex items-center gap-2 text-cyan-400"><i class="fa-solid fa-code text-xs"></i> SPFx & TypeScript Pro-Code</span>
+                  <span class="font-mono text-slate-400">92%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                  <div class="bg-cyan-500 h-full rounded-full" style="width: 92%"></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                <div class="flex items-center justify-between text-xs text-slate-300 font-medium">
+                  <span class="flex items-center gap-2 text-emerald-400"><i class="fa-solid fa-brain text-xs"></i> Copilot Studio & GenAI / RAG</span>
+                  <span class="font-mono text-slate-400">88%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                  <div class="bg-emerald-500 h-full rounded-full" style="width: 88%"></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                <div class="flex items-center justify-between text-xs text-slate-300 font-medium">
+                  <span class="flex items-center gap-2 text-amber-400"><i class="fa-solid fa-chart-line text-xs"></i> Power BI & Python Data Pipelines</span>
+                  <span class="font-mono text-slate-400">90%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                  <div class="bg-amber-500 h-full rounded-full" style="width: 90%"></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Quick Contact Snippet -->
+            <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5"><i class="fa-regular fa-envelope text-slate-500"></i> vivekaryan432@hotmail.com</span>
+              <a href="#contact" class="text-cyan-400 hover:underline">Message <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: TECHNICAL VALUE PROPOSITION MATRIX -->
+  <section id="matrix" class="py-20 bg-slate-900/40 border-y border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-2">Technical Value Proposition Matrix</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">The Architectural Triad</h2>
+        <p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+          Most organizations struggle with a false binary between rigid slow pro-code engineering and ungoverned citizen low-code sprawl. I deliver a balanced architectural triad uniting speed, security, and next-generation intelligence.
+        </p>
+      </div>
+
+      <!-- 3-Column Architectural Highlight Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+        
+        <!-- Column 1: Low-Code Automation -->
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 hover:border-blue-500/50 transition-colors flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-5">
+              <i class="fa-solid fa-sitemap text-xl"></i>
+            </div>
+            
+            <h3 class="text-lg font-bold text-white tracking-tight">01. Low-Code Automation & Governance</h3>
+            <p class="text-xs text-blue-400 font-medium mt-1">Power Apps · Automate · Dataverse · Solutions ALM</p>
+
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Engineering high-resilience business applications and automated workflows with enterprise Dataverse architecture, role-based security matrices, and multi-tier environment ALM.
+            </p>
+
+            <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-blue-400 mt-0.5 text-[11px]"></i>
+                <span><strong>Canvas & Model-Driven Apps:</strong> Responsive nested container layouts, offline caching, and delegation-compliant queries.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-blue-400 mt-0.5 text-[11px]"></i>
+                <span><strong>Power Automate Cloud Flows:</strong> Multi-stage approval matrices, exception handling, child flows, and service principal authentication.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-blue-400 mt-0.5 text-[11px]"></i>
+                <span><strong>Dataverse & Solutions ALM:</strong> Managed solutions, environment variables, security roles, and Azure DevOps CI/CD pipeline export/unpack.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-blue-400 mt-0.5 text-[11px]"></i>
+                <span><strong>Power BI Executive Telemetry:</strong> Star schemas, DAX measures, row-level security (RLS), and scheduled refresh gateways.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>Enterprise SLA Impact</span>
+            <span class="font-mono text-blue-400 font-semibold">&gt; 99.9% Flow Reliability</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Custom Pro-Code Extension -->
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 hover:border-cyan-500/50 transition-colors flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+              <i class="fa-solid fa-code text-xl"></i>
+            </div>
+            
+            <h3 class="text-lg font-bold text-white tracking-tight">02. Custom Pro-Code Extension</h3>
+            <p class="text-xs text-cyan-400 font-medium mt-1">SPFx · TypeScript · REST APIs · Python Pipelines</p>
+
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Extending M365 and SharePoint beyond out-of-the-box constraints. Writing production-grade TypeScript React web parts, headless Python ETL workers, and RESTful microservices.
+            </p>
+
+            <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-cyan-400 mt-0.5 text-[11px]"></i>
+                <span><strong>SharePoint Framework (SPFx):</strong> React, TypeScript, PnPjs, custom web parts, application customizers, and PCF components.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-cyan-400 mt-0.5 text-[11px]"></i>
+                <span><strong>SharePoint Online REST & Microsoft Graph:</strong> Direct token-based API integrations bypassing fragile browser scraping.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-cyan-400 mt-0.5 text-[11px]"></i>
+                <span><strong>Python Automated Data Pipelines:</strong> Headless Pandas workers validating, cleaning, and syncing high-volume financial records.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-cyan-400 mt-0.5 text-[11px]"></i>
+                <span><strong>PowerShell Governance:</strong> PnP PowerShell automation for bulk site provisioning, taxonomy tagging, and permission auditing.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>Code Modernization</span>
+            <span class="font-mono text-cyan-400 font-semibold">AngularJS → SPFx React</span>
+          </div>
+        </div>
+
+        <!-- Column 3: Enterprise AI & Data Science -->
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 hover:border-emerald-500/50 transition-colors flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5">
+              <i class="fa-solid fa-brain text-xl"></i>
+            </div>
+            
+            <h3 class="text-lg font-bold text-white tracking-tight">03. Enterprise AI & Data Science</h3>
+            <p class="text-xs text-emerald-400 font-medium mt-1">Copilot Studio · AI Builder · RAG · Claude & GPT-4o</p>
+
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Infusing cognitive capabilities into enterprise operations. Deploying enterprise-grounded conversational agents, automated invoice/contract classification, and RAG pipelines.
+            </p>
+
+            <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5 text-[11px]"></i>
+                <span><strong>Microsoft Copilot Studio:</strong> Custom enterprise agents, multi-turn generative answers, topic triggering, and Power Automate action calls.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5 text-[11px]"></i>
+                <span><strong>AI Builder Models:</strong> Custom document processing for financial loans, receipt OCR, sentiment detection, and automated category tagging.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5 text-[11px]"></i>
+                <span><strong>RAG Architecture:</strong> Grounding LLMs with enterprise SharePoint document repositories while strictly honoring tenant permission boundaries.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5 text-[11px]"></i>
+                <span><strong>Academic Data Rigor:</strong> Backed by an MBA in Data Science (Amity) & Anthropic Claude Certified Architect credentials.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>GenAI Integration</span>
+            <span class="font-mono text-emerald-400 font-semibold">Context-Grounded RAG</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Architectural Integration Blueprint Viewer -->
+      <div class="mt-12 p-6 rounded-2xl bg-slate-950 border border-slate-800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div>
+            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-diagram-project text-cyan-400"></i> Integrated Enterprise Blueprint: How The Triad Connects
+            </h4>
+            <p class="text-xs text-slate-400 mt-1">End-to-end flow from user interaction to compliance-secured data processing</p>
+          </div>
+          <span class="text-xs font-mono text-slate-400">ISO / BFSI Compliant Flow</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-6 text-center text-xs">
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="font-bold text-cyan-400 mb-1">1. Interface Layer</div>
+            <p class="text-slate-300">Custom SPFx Web Parts + Canvas Power Apps embedded in SharePoint</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="font-bold text-blue-400 mb-1">2. Process & Logic</div>
+            <p class="text-slate-300">Power Automate Multi-tier Flows + Custom Python REST API microservices</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="font-bold text-emerald-400 mb-1">3. Intelligence Layer</div>
+            <p class="text-slate-300">Copilot Studio & AI Builder parsing contracts & orchestrating queries</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="font-bold text-amber-400 mb-1">4. Storage & Insights</div>
+            <p class="text-slate-300">Dataverse + Azure SQL + Executive Power BI KPI Dashboards</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: DETAILED CASE STUDIES -->
+  <section id="cases" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-slate-800">
+      <div>
+        <div class="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2">Enterprise Case Studies</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Architectural Deep-Dives</h2>
+        <p class="mt-2 text-slate-400 text-sm max-w-xl">
+          Problem, technical architecture, and validated business impact across 4 key enterprise implementations.
+        </p>
+      </div>
+
+      <!-- Filter Tabs (Interactive buttons) -->
+      <div class="flex flex-wrap items-center gap-1.5 p-1 bg-slate-900 border border-slate-800 rounded-xl" id="caseFilters">
+        <button onclick="filterCase('all')" id="btn-all" class="case-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors bg-blue-600 text-white">
+          All Case Studies
+        </button>
+        <button onclick="filterCase('bfsi')" id="btn-bfsi" class="case-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors text-slate-400 hover:text-white">
+          BFSI & Compliance
+        </button>
+        <button onclick="filterCase('hybrid')" id="btn-hybrid" class="case-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors text-slate-400 hover:text-white">
+          SPFx Modernization
+        </button>
+        <button onclick="filterCase('data')" id="btn-data" class="case-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors text-slate-400 hover:text-white">
+          Python Data Pipelines
+        </button>
+        <button onclick="filterCase('bi')" id="btn-bi" class="case-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors text-slate-400 hover:text-white">
+          Power BI & Dashboards
+        </button>
+      </div>
+    </div>
+
+    <!-- Case Studies List -->
+    <div class="space-y-8 mt-10">
+
+      <!-- Case 1: DMI Finance Compliance -->
+      <article data-category="bfsi" class="case-card rounded-2xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 hover:border-slate-700 transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2 text-xs text-blue-400 font-semibold">
+              <span>DMI Finance</span>
+              <span aria-hidden="true">·</span>
+              <span>Enterprise BFSI</span>
+              <span aria-hidden="true">·</span>
+              <span class="text-slate-400 font-mono">Feb 2026 - Present</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">
+              Automated Financial Compliance & Role-Based Workflows
+            </h3>
+          </div>
+          <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2.5 py-1 rounded-md">
+            78% TAT Reduction
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 pt-6 border-t border-slate-800/80">
+          <!-- Problem -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> The Problem
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Critical financial agreements and loan sanction documents required multi-tier compliance reviews across credit, risk, and legal teams. Manual email chains and file shares caused 3 to 5 day review lags, risk of untracked revisions, and compliance audit exposure.
+            </p>
+          </div>
+
+          <!-- Architecture & Stack -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-network-wired text-cyan-400"></i> Architecture & Stack
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Engineered custom SPFx document viewing components embedded in secure SharePoint Document Sets. Connected to multi-tier Power Automate cloud flows evaluating dynamic Delegation of Authority (DOA) matrices against Dataverse security roles with automated PDF watermarking.
+            </p>
+            <div class="text-xs font-mono text-cyan-300 pt-1">
+              Stack: SPFx, TypeScript, Power Automate, Dataverse, SharePoint REST, PDF Converter
+            </div>
+          </div>
+
+          <!-- Business Outcome -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-chart-column text-emerald-400"></i> Business Outcome
+            </h4>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Turnaround time collapsed from 4.5 days to under 18 hours.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>100% immutable audit trail for external regulatory inspections.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Zero unauthorized document overrides across 400+ monthly files.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 2: BirlaSoft SPFx + Power Apps Hybrid -->
+      <article data-category="hybrid" class="case-card rounded-2xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 hover:border-slate-700 transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2 text-xs text-cyan-400 font-semibold">
+              <span>BirlaSoft</span>
+              <span aria-hidden="true">·</span>
+              <span>Enterprise Modernization</span>
+              <span aria-hidden="true">·</span>
+              <span class="text-slate-400 font-mono">Sept 2024 - Jan 2026</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">
+              Custom SPFx & Power Apps Hybrid Modernization
+            </h3>
+          </div>
+          <span class="text-xs font-mono text-blue-400 bg-blue-950/60 border border-blue-800/80 px-2.5 py-1 rounded-md">
+            7 Devs Led · 3.2x Faster Load
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 pt-6 border-t border-slate-800/80">
+          <!-- Problem -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> The Problem
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Enterprise client suffered from legacy AngularJS web applications embedded in older SharePoint tenancies that were sluggish, non-responsive on mobile devices, and incompatible with modern security token protocols. Standard Canvas apps lacked specific UI grid controls needed.
+            </p>
+          </div>
+
+          <!-- Architecture & Stack -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-network-wired text-cyan-400"></i> Architecture & Stack
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Led an Agile squad of 7 developers building a hybrid architecture: encapsulated React/TypeScript SPFx components embedded into Canvas Power Apps via custom PCF controls, consuming SharePoint Online REST APIs with centralized state management and PnPjs.
+            </p>
+            <div class="text-xs font-mono text-cyan-300 pt-1">
+              Stack: SPFx v1.18, React, TypeScript, PCF, Canvas Power Apps, PnPjs, Azure DevOps
+            </div>
+          </div>
+
+          <!-- Business Outcome -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-chart-column text-emerald-400"></i> Business Outcome
+            </h4>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Complete decommissioning of deprecated AngularJS codebase across 12 sites.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>3.2x performance acceleration in client data grid rendering.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Established reusable PCF component library adopted across enterprise teams.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 3: Python & M365 REST API Data Pipeline -->
+      <article data-category="data" class="case-card rounded-2xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 hover:border-slate-700 transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2 text-xs text-amber-400 font-semibold">
+              <span>DMI Finance</span>
+              <span aria-hidden="true">·</span>
+              <span>Data Engineering & Automation</span>
+              <span aria-hidden="true">·</span>
+              <span class="text-slate-400 font-mono">2026</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">
+              Automated Python & M365 REST API Data Pipeline
+            </h3>
+          </div>
+          <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2.5 py-1 rounded-md">
+            4 Days → 18 Minutes
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 pt-6 border-t border-slate-800/80">
+          <!-- Problem -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> The Problem
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Every month-end, operations teams received hundreds of loan disbursement spreadsheets uploaded across multiple SharePoint libraries. Manual reconciliation, validation against schema rules, and ingestion into core financial databases took 4 full business days with human error risks.
+            </p>
+          </div>
+
+          <!-- Architecture & Stack -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-network-wired text-cyan-400"></i> Architecture & Stack
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Designed headless Python ETL microservice authenticating directly via SharePoint Online REST APIs with Azure Key Vault secrets. The pipeline reads streaming Excel bytes with Pandas, runs automated schema verification, flags anomaly deltas, and synchronizes clean records into Dataverse.
+            </p>
+            <div class="text-xs font-mono text-cyan-300 pt-1">
+              Stack: Python, Pandas, SharePoint REST API, Azure Key Vault, Dataverse, MS Graph
+            </div>
+          </div>
+
+          <!-- Business Outcome -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-chart-column text-emerald-400"></i> Business Outcome
+            </h4>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Month-end processing reduced from 4 business days to 18 automated minutes.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Eliminated 100% of human copy-paste errors and discrepancy omissions.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Instant automated error-reporting notification dispatched to branch managers.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 4: EY / Healthcare BI & KPI Dashboard System -->
+      <article data-category="bi" class="case-card rounded-2xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 hover:border-slate-700 transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400 font-semibold">
+              <span>EY & Consulting Engagements</span>
+              <span aria-hidden="true">·</span>
+              <span>Enterprise Business Intelligence</span>
+              <span aria-hidden="true">·</span>
+              <span class="text-slate-400 font-mono">2021 - 2024</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">
+              Enterprise BI & Financial KPI Dashboard System
+            </h3>
+          </div>
+          <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 border border-cyan-800/80 px-2.5 py-1 rounded-md">
+            Same-Day Executive Insights
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 pt-6 border-t border-slate-800/80">
+          <!-- Problem -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> The Problem
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              C-suite and executive leadership at client engagements lacked consolidated visibility across distributed regional operational metrics and portfolio revenues. Consulting reports took up to a week to manually aggregate from fragmented SQL instances and offline spreadsheets.
+            </p>
+          </div>
+
+          <!-- Architecture & Stack -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-network-wired text-cyan-400"></i> Architecture & Stack
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Architected star-schema data models in Power BI connected via on-premises data gateways to Azure SQL databases. Wrote complex DAX measures for Year-over-Year (YoY) variance, dynamic currency conversions, and role-level security (RLS) ensuring strict departmental partitioning.
+            </p>
+            <div class="text-xs font-mono text-cyan-300 pt-1">
+              Stack: Power BI Premium, Azure SQL, DAX, Star Schema, On-Premises Data Gateway
+            </div>
+          </div>
+
+          <!-- Business Outcome -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-chart-column text-emerald-400"></i> Business Outcome
+            </h4>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Decision turnaround reduced from 7-day reporting cycles to instantaneous live dashboards.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Deployed to 350+ active global users with sub-second report page rendering.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-1 text-[10px]"></i>
+                <span>Automated alert triggers when critical operating margins dipped below threshold.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: CAREER TIMELINE & LEADERSHIP ACCOMPLISHMENTS -->
+  <section id="timeline" class="py-20 bg-slate-900/40 border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl">
+        <div class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2">Track Record & Growth</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Career Timeline & Leadership</h2>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base leading-relaxed">
+          From consulting specialist executing bespoke SharePoint extensions to leading cross-functional Agile engineering teams delivering enterprise-grade BFSI architectures.
+        </p>
+      </div>
+
+      <!-- Timeline List -->
+      <div class="mt-12 relative border-l border-slate-800 ml-4 sm:ml-6 space-y-12">
+        
+        <!-- Timeline Item 1 -->
+        <div class="relative pl-8 sm:pl-10">
+          <!-- Dot -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-950"></div>
+
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Technical Lead</h3>
+            <span class="text-xs font-mono text-blue-400 font-semibold bg-blue-950/60 border border-blue-900/60 px-2.5 py-0.5 rounded">Feb 2026 - Present</span>
+          </div>
+          <div class="text-sm font-medium text-cyan-400 mt-0.5">DMI Finance · Noida, India (BFSI Enterprise)</div>
+
+          <div class="mt-4 p-5 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Spearheading SPFx portal architectures and enterprise Power Platform solutions across critical lending and compliance business units.
+            </p>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-chevron-right text-blue-400 text-[10px] mt-1"></i>
+                <span>Lead end-to-end development of internal SPFx web parts and compliance portals.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-chevron-right text-blue-400 text-[10px] mt-1"></i>
+                <span>Design CXO-level Power BI KPI dashboards for instant executive visibility into financial metrics.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-chevron-right text-blue-400 text-[10px] mt-1"></i>
+                <span>Engineered automated Python data extraction scripts communicating via SharePoint REST APIs.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-chevron-right text-blue-400 text-[10px] mt-1"></i>
+                <span>Enforce rigorous security permissions and document protection protocols for sensitive files.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="relative pl-8 sm:pl-10">
+          <!-- Dot -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-950"></div>
+
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Technical Specialist (Team Lead)</h3>
+            <span class="text-xs font-mono text-cyan-400 font-semibold bg-cyan-950/60 border border-cyan-900/60 px-2.5 py-0.5 rounded">Sept 2024 - Jan 2026</span>
+          </div>
+          <div class="text-sm font-medium text-cyan-400 mt-0.5">BirlaSoft · Enterprise Delivery</div>
+
+          <div class="mt-5 p-5 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Led a distributed Agile team of 7 developers through sprint delivery cycles, code reviews, and architectural modernization.
+            </p>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-chevron-right text-cyan-400 text-[10px] mt-1"></i>
+                <span>Managed daily standups, backlog grooming, sprint velocity tracking, and PR sign-offs.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-chevron-right text-cyan-400 text-[10px] mt-1"></i>
+                <span>Architected hybrid SPFx frontend components seamlessly embedded into Canvas Power Apps.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-chevron-right text-cyan-400 text-[10px] mt-1"></i>
+                <span>Modernized legacy AngularJS SharePoint apps into maintainable TypeScript React codebases.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-chevron-right text-cyan-400 text-[10px] mt-1"></i>
+                <span>Mentored junior engineers on Power Platform best practices, delegation rules, and ALM pipelines.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="relative pl-8 sm:pl-10">
+          <!-- Dot -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-slate-950"></div>
+
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Enterprise Consulting Engagements</h3>
+            <span class="text-xs font-mono text-slate-400 font-semibold bg-slate-800/80 px-2.5 py-0.5 rounded">2021 - 2024</span>
+          </div>
+          <div class="text-sm font-medium text-slate-400 mt-0.5">Assist Asia · Compunnel · Q3 Tech · EY · Xoriant · Technogen</div>
+
+          <div class="mt-4 p-5 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Delivered mission-critical enterprise automation, BI dashboards, and tenant restructuring across premier clients:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-300">
+              <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+                <strong class="text-white block mb-1">Assist Asia:</strong>
+                Automated complex approval workflows spanning 8 distinct departments; engineered SQL-backed Power Apps.
+              </div>
+              <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+                <strong class="text-white block mb-1">Compunnel & Q3 (Adani Domino):</strong>
+                Engineered automated SQL-to-Power BI ETL pipelines for healthcare KPI tracking.
+              </div>
+              <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+                <strong class="text-white block mb-1">EY (Ernst & Young):</strong>
+                Built high-impact financial dashboards shrinking turnaround from multi-day delays to same-day delivery.
+              </div>
+              <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+                <strong class="text-white block mb-1">Xoriant & Technogen:</strong>
+                Automated large-scale SharePoint site provisioning with PowerShell; restructured enterprise taxonomy.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Leadership Principles Callout -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-14 pt-10 border-t border-slate-800">
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-white font-bold text-sm flex items-center gap-2 mb-1">
+            <i class="fa-solid fa-users-gear text-blue-400"></i> High-Velocity Team Delivery
+          </div>
+          <p class="text-xs text-slate-400">Agile sprint discipline, transparent burndown tracking, and unblocking engineering hurdles.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-white font-bold text-sm flex items-center gap-2 mb-1">
+            <i class="fa-solid fa-shield-halved text-cyan-400"></i> Enterprise Governance
+          </div>
+          <p class="text-xs text-slate-400">Enforcing DLP policies, environment isolation (Dev/Test/Prod), and security compliance.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-white font-bold text-sm flex items-center gap-2 mb-1">
+            <i class="fa-solid fa-comments-dollar text-emerald-400"></i> Executive Alignment
+          </div>
+          <p class="text-xs text-slate-400">Translating complex business mandates into reliable technical roadmaps and actionable KPIs.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: EDUCATION, CERTIFICATIONS & TECH BADGES -->
+  <section id="credentials" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-2">Qualifications & Rigor</div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Certifications, Education & Skills</h2>
+      <p class="mt-2 text-slate-400 text-sm">
+        Verified industry credentials and advanced academic foundations in Data Science and Engineering.
+      </p>
+    </div>
+
+    <!-- Highlighted Certifications Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+      
+      <!-- Cert 1: Claude Architect -->
+      <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition-colors">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
+          <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+        </div>
+        <h4 class="text-sm font-bold text-white">Claude Certified Architect</h4>
+        <p class="text-xs text-amber-400 font-medium mt-0.5">Anthropic Verified</p>
+        <p class="text-xs text-slate-400 mt-2">
+          Advanced generative AI architectures, RAG pipelines, tool-use calling, and enterprise prompt orchestration.
+        </p>
+      </div>
+
+      <!-- Cert 2: PL-900 -->
+      <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-colors">
+        <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+          <i class="fa-brands fa-microsoft text-lg"></i>
+        </div>
+        <h4 class="text-sm font-bold text-white">PL-900 Certified</h4>
+        <p class="text-xs text-blue-400 font-medium mt-0.5">Microsoft Certified</p>
+        <p class="text-xs text-slate-400 mt-2">
+          Power Platform Fundamentals: Power Apps, Power Automate, Power BI, Dataverse, and security administration.
+        </p>
+      </div>
+
+      <!-- Cert 3: IBM Data Science -->
+      <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition-colors">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+          <i class="fa-solid fa-chart-pie text-lg"></i>
+        </div>
+        <h4 class="text-sm font-bold text-white">IBM Data Science Professional</h4>
+        <p class="text-xs text-cyan-400 font-medium mt-0.5">IBM Professional Certification</p>
+        <p class="text-xs text-slate-400 mt-2">
+          Machine learning algorithms, data analysis with Python, SQL queries, and predictive modeling techniques.
+        </p>
+      </div>
+
+      <!-- Cert 4: Google Data Analytics -->
+      <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition-colors">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+          <i class="fa-brands fa-google text-lg"></i>
+        </div>
+        <h4 class="text-sm font-bold text-white">Google Data Analytics</h4>
+        <p class="text-xs text-emerald-400 font-medium mt-0.5">Google Professional Certification</p>
+        <p class="text-xs text-slate-400 mt-2">
+          Data cleaning, exploratory data analysis, R/SQL, data visualization, and quantitative decision methodologies.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Education Degree Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      
+      <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-cyan-400 flex-shrink-0">
+          <i class="fa-solid fa-graduation-cap text-xl"></i>
+        </div>
+        <div>
+          <span class="text-xs font-mono text-cyan-400 font-semibold">Postgraduate Degree</span>
+          <h4 class="text-base font-bold text-white mt-0.5">MBA in Data Science</h4>
+          <p class="text-xs text-slate-400 mt-1">Amity University Online</p>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Specialized curriculum combining executive business strategy, statistical decision modeling, predictive data science, and enterprise technology management.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-blue-400 flex-shrink-0">
+          <i class="fa-solid fa-microchip text-xl"></i>
+        </div>
+        <div>
+          <span class="text-xs font-mono text-blue-400 font-semibold">Undergraduate Degree</span>
+          <h4 class="text-base font-bold text-white mt-0.5">B.Tech in Electronics & Communication Engineering</h4>
+          <p class="text-xs text-slate-400 mt-1">Engineering Foundation</p>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Rigorous engineering training in digital systems, algorithms, signal processing, and systems architecture.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Categorized Skill Taxonomy (Clean unboxed tags) -->
+    <div class="mt-12 p-8 rounded-2xl bg-slate-900 border border-slate-800">
+      <h3 class="text-base font-bold text-white mb-6 flex items-center gap-2">
+        <i class="fa-solid fa-cubes-stacked text-blue-400"></i> Comprehensive Technical Skill Taxonomy
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-xs">
+        
+        <!-- Category 1 -->
+        <div>
+          <h4 class="font-bold text-cyan-400 uppercase tracking-wider mb-3">Power Platform</h4>
+          <div class="flex flex-wrap gap-2 text-slate-300">
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Canvas Apps</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Model-Driven Apps</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Power Automate</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Dataverse</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Power BI (DAX)</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">ALM Solutions</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">DLP Policies</span>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div>
+          <h4 class="font-bold text-blue-400 uppercase tracking-wider mb-3">SharePoint & M365</h4>
+          <div class="flex flex-wrap gap-2 text-slate-300">
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">SPFx (TypeScript)</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">React for SPFx</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">SharePoint REST API</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Microsoft Graph</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">PnPjs / PnP PowerShell</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Document Sets</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Information Architecture</span>
+          </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div>
+          <h4 class="font-bold text-emerald-400 uppercase tracking-wider mb-3">AI & Data Engineering</h4>
+          <div class="flex flex-wrap gap-2 text-slate-300">
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Copilot Studio</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">AI Builder Models</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">RAG Architecture</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">LangChain</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Python (Pandas)</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">SQL & ETL Pipelines</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Claude & GPT-4o</span>
+          </div>
+        </div>
+
+        <!-- Category 4 -->
+        <div>
+          <h4 class="font-bold text-amber-400 uppercase tracking-wider mb-3">Cloud, DevOps & Agile</h4>
+          <div class="flex flex-wrap gap-2 text-slate-300">
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Azure DevOps</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">CI/CD YAML Pipelines</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">GitHub</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Jira & Confluence</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Agile Sprint Leadership</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Code Reviews</span>
+            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800">Azure Key Vault</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION 6: FOOTER & RECRUITER CONTACT FORM -->
+  <section id="contact" class="py-20 bg-slate-900/60 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Recruiter Briefing & Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-2">Recruitment & Advisory</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Initiate a Discussion</h2>
+            <p class="mt-3 text-slate-300 text-sm leading-relaxed">
+              Actively exploring leadership roles as <strong>Technical Lead</strong>, <strong>Power Platform Solution Architect</strong>, or <strong>Lead SPFx / M365 Developer</strong>. Fully prepared for international relocation or remote/hybrid engagements.
+            </p>
+          </div>
+
+          <div class="space-y-4 pt-4 border-t border-slate-800">
+            <div class="flex items-center gap-3 text-sm text-slate-300">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center flex-shrink-0">
+                <i class="fa-regular fa-envelope text-sm"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Direct Email</div>
+                <a href="mailto:vivekaryan432@hotmail.com" class="text-white hover:text-cyan-400 font-medium">vivekaryan432@hotmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 text-sm text-slate-300">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center flex-shrink-0">
+                <i class="fa-brands fa-linkedin text-sm"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">LinkedIn Profile</div>
+                <a href="https://linkedin.com/in/vivek-kumara" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-400 font-medium">linkedin.com/in/vivek-kumara</a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 text-sm text-slate-300">
+              <div class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center flex-shrink-0">
+                <i class="fa-brands fa-github text-sm"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">GitHub Repositories</div>
+                <a href="https://github.com/Vivektrav5" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-400 font-medium">github.com/Vivektrav5</a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 text-sm text-slate-300">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-location-dot text-sm"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Location & Availability</div>
+                <div class="text-white">Noida, India (Available for Relocation to Finland, Denmark, Singapore, UAE)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Standalone HTML Export Callout -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between gap-4">
+            <div>
+              <div class="text-xs font-bold text-white">Standalone File Ready</div>
+              <p class="text-[11px] text-slate-400 mt-0.5">Self-contained HTML with embedded Tailwind CDN & FontAwesome</p>
+            </div>
+            <button onclick="downloadStandaloneFile()" class="px-3 py-1.5 text-xs font-semibold text-cyan-400 hover:text-white bg-cyan-950/60 hover:bg-cyan-900 border border-cyan-800/80 rounded-lg transition-colors whitespace-nowrap">
+              <i class="fa-solid fa-download mr-1"></i> Save File
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right: Recruiter Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-8 rounded-2xl bg-slate-950 border border-slate-800 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2">Send an Opportunity / Message</h3>
+            <p class="text-xs text-slate-400 mb-6">Fill in details to launch a pre-composed direct email or instant notification.</p>
+
+            <form id="recruiterForm" onsubmit="handleRecruiterSubmit(event)" class="space-y-4">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="senderName" class="block text-xs font-medium text-slate-300 mb-1">Your Name *</label>
+                  <input type="text" id="senderName" required placeholder="e.g. Sarah Jenkins" class="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-500 transition-colors" />
+                </div>
+                <div>
+                  <label for="senderEmail" class="block text-xs font-medium text-slate-300 mb-1">Your Work Email *</label>
+                  <input type="email" id="senderEmail" required placeholder="e.g. s.jenkins@enterprise.com" class="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-500 transition-colors" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="companyName" class="block text-xs font-medium text-slate-300 mb-1">Organization / Client</label>
+                  <input type="text" id="companyName" placeholder="e.g. Nordic Financial Group / BFSI" class="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-500 transition-colors" />
+                </div>
+                <div>
+                  <label for="inquiryType" class="block text-xs font-medium text-slate-300 mb-1">Inquiry Purpose</label>
+                  <select id="inquiryType" class="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs sm:text-sm focus:outline-none focus:border-cyan-500 transition-colors">
+                    <option value="Technical Lead / Solution Architect Role">Technical Lead / Solution Architect Role</option>
+                    <option value="Lead SPFx / M365 Development Lead">Lead SPFx / M365 Development Lead</option>
+                    <option value="Relocation Offer (Finland / Denmark / Singapore / UAE)">Relocation Offer (Nordics / SG / UAE)</option>
+                    <option value="Enterprise Architecture Consulting">Enterprise Architecture Consulting</option>
+                    <option value="Technical Exploration / Coffee Chat">Technical Exploration / Coffee Chat</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="messageBody" class="block text-xs font-medium text-slate-300 mb-1">Role Specifications or Message *</label>
+                <textarea id="messageBody" rows="4" required placeholder="Hello Vivek, we reviewed your Power Platform, SPFx, and data pipeline experience and would like to discuss..." class="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-500 transition-colors"></textarea>
+              </div>
+
+              <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+                <button type="submit" class="px-6 py-2.5 text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-colors flex items-center gap-2">
+                  <i class="fa-regular fa-paper-plane text-xs"></i> Send Message Directly
+                </button>
+                <span class="text-[11px] text-slate-400">Opens your default email client with formatted brief.</span>
+              </div>
+
+              <div id="formSuccessToast" class="hidden p-3 rounded-lg bg-emerald-950 border border-emerald-800 text-emerald-300 text-xs flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                <span>Thank you! Your email client was opened. If it did not launch, reach out to <strong>vivekaryan432@hotmail.com</strong> directly.</span>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Credits -->
+      <div class="mt-16 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div>
+          &copy; 2026 Vivek Kumar. All rights reserved. Technical Lead & Solution Architect.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#hero" class="hover:text-slate-200">Back to Top</a>
+          <a href="https://linkedin.com/in/vivek-kumara" target="_blank" rel="noopener noreferrer" class="hover:text-slate-200">LinkedIn</a>
+          <a href="https://github.com/Vivektrav5" target="_blank" rel="noopener noreferrer" class="hover:text-slate-200">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL: RESUME / CV PREVIEW -->
+  <div id="cvModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div>
+          <h3 class="text-lg font-bold text-white">Curriculum Vitae Preview</h3>
+          <p class="text-xs text-slate-400">Vivek Kumar · Technical Lead & Solution Architect</p>
+        </div>
+        <button onclick="closeCvModal()" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800" aria-label="Close CV Modal">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="mt-6 space-y-4 text-xs sm:text-sm text-slate-300">
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+          <div class="font-bold text-white text-sm">Professional Summary</div>
+          <p class="mt-1.5 text-slate-300 leading-relaxed">
+            Technical Lead with 4+ years of hands-on delivery experience across enterprise BFSI and IT consulting. Expert in Microsoft Power Platform (Canvas, Model-Driven, Dataverse, Power Automate, Power BI), SharePoint Framework (SPFx, TypeScript, React), Python ETL pipelines, and GenAI implementations (Copilot Studio, RAG). Proven Agile leader directing teams of up to 7 engineers.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+          <div class="font-bold text-white text-sm">Target Roles & Mobility</div>
+          <div class="mt-1 text-slate-300">
+            <strong>Roles:</strong> Technical Lead, Power Platform Solution Architect, Lead SPFx / M365 Developer<br/>
+            <strong>Relocation Markets:</strong> Finland, Denmark, Singapore, UAE (and global hybrid/remote)
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+          <div class="font-bold text-white text-sm">Education & Certifications</div>
+          <ul class="mt-1.5 space-y-1 list-disc list-inside text-slate-300">
+            <li>MBA in Data Science - Amity University Online</li>
+            <li>B.Tech in Electronics & Communication Engineering</li>
+            <li>Anthropic Claude Certified Architect</li>
+            <li>Microsoft Certified: Power Platform Fundamentals (PL-900)</li>
+            <li>IBM Data Science Professional Certificate</li>
+            <li>Google Data Analytics Professional Certificate</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between gap-4">
+        <button onclick="closeCvModal()" class="px-4 py-2 text-xs font-medium text-slate-300 hover:text-white bg-slate-800 rounded-lg">
+          Close Preview
+        </button>
+        <a href="mailto:vivekaryan432@hotmail.com?subject=Request%20Official%20CV%20PDF%20-%20Vivek%20Kumar" class="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-xs"></i> Request Official PDF via Email
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING SCROLL-TO-TOP BUTTON -->
+  <button 
+    id="scrollToTopBtn" 
+    onclick="scrollToTop()" 
+    aria-label="Scroll to top" 
+    title="Scroll to top"
+    class="fixed bottom-6 right-6 z-40 p-3.5 rounded-xl bg-blue-600/90 hover:bg-blue-500 text-white shadow-xl shadow-blue-950/60 border border-blue-400/40 backdrop-blur-md transition-all duration-300 opacity-0 translate-y-6 scale-90 pointer-events-none group focus:outline-none focus:ring-2 focus:ring-cyan-400"
+  >
+    <i class="fa-solid fa-arrow-up text-base group-hover:-translate-y-0.5 transition-transform"></i>
+  </button>
+
+  <!-- JAVASCRIPT FOR INTERACTIVE LOGIC -->
+  <script>
+    const DEFAULT_AVATAR = '/src/assets/images/vivek_kumar_real_photo_1790766671250.jpg';
+
+    // Initialize saved custom photo from localStorage if present
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedPhoto = localStorage.getItem('vivek_portfolio_avatar');
+      if (savedPhoto) {
+        const img = document.getElementById('profileImg');
+        const resetBtn = document.getElementById('resetAvatarBtn');
+        if (img) img.src = savedPhoto;
+        if (resetBtn) resetBtn.classList.remove('hidden');
+      }
+    });
+
+    // Custom user photo preview & persistence
+    function previewUserPhoto(event) {
+      const file = event.target.files && event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const result = e.target.result;
+          const img = document.getElementById('profileImg');
+          const resetBtn = document.getElementById('resetAvatarBtn');
+          if (img) {
+            img.src = result;
+            img.style.display = 'block';
+          }
+          if (resetBtn) resetBtn.classList.remove('hidden');
+          try {
+            localStorage.setItem('vivek_portfolio_avatar', result);
+          } catch(err) {
+            console.warn('Storage quota exceeded', err);
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function resetAvatar() {
+      const img = document.getElementById('profileImg');
+      const resetBtn = document.getElementById('resetAvatarBtn');
+      if (img) {
+        img.src = DEFAULT_AVATAR;
+        img.style.display = 'block';
+      }
+      if (resetBtn) resetBtn.classList.add('hidden');
+      localStorage.removeItem('vivek_portfolio_avatar');
+    }
+
+    // Scroll-to-top visibility toggle past hero section
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollToTopBtn');
+      if (!btn) return;
+      if (window.scrollY > 380) {
+        btn.classList.remove('opacity-0', 'translate-y-6', 'scale-90', 'pointer-events-none');
+        btn.classList.add('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
+      } else {
+        btn.classList.remove('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
+        btn.classList.add('opacity-0', 'translate-y-6', 'scale-90', 'pointer-events-none');
+      }
+    }, { passive: true });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Theme toggle logic
+    function toggleTheme() {
+      const html = document.documentElement;
+      const themeIcon = document.getElementById('themeIcon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      } else {
+        html.classList.add('dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+    }
+
+    // Mobile drawer menu toggle
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      const menuIcon = document.getElementById('menuIcon');
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        drawer.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    }
+
+    // Case studies category filter
+    function filterCase(category) {
+      // update buttons
+      const buttons = document.querySelectorAll('.case-filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'text-white');
+        btn.classList.add('text-slate-400');
+      });
+      const activeBtn = document.getElementById('btn-' + category);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-400');
+        activeBtn.classList.add('bg-blue-600', 'text-white');
+      }
+
+      // update cards
+      const cards = document.querySelectorAll('.case-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // CV Modal handlers
+    function openCvModal() {
+      document.getElementById('cvModal').classList.remove('hidden');
+    }
+    function closeCvModal() {
+      document.getElementById('cvModal').classList.add('hidden');
+    }
+
+    // Recruiter form submit handler
+    function handleRecruiterSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const company = document.getElementById('companyName').value || 'Enterprise Client';
+      const purpose = document.getElementById('inquiryType').value;
+      const message = document.getElementById('messageBody').value;
+
+      const subject = encodeURIComponent(`[Portfolio Opportunity] ${purpose} - ${name} (${company})`);
+      const body = encodeURIComponent(
+        `Hi Vivek,\n\nName: ${name}\nEmail: ${email}\nOrganization: ${company}\nPurpose: ${purpose}\n\nMessage Details:\n${message}\n\n--\nSent via Vivek Kumar Portfolio`
+      );
+
+      // Open mailto link
+      window.location.href = `mailto:vivekaryan432@hotmail.com?subject=${subject}&body=${body}`;
+
+      // Show toast
+      const toast = document.getElementById('formSuccessToast');
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 7000);
+    }
+
+    // Download Standalone file
+    function downloadStandaloneFile() {
+      const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'Vivek_Kumar_Portfolio.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+</body>
+</html>
